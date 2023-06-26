@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Font */
+    --font-size-regular: 16px;
+    --font-size-lg: 40px;
+    --font: 'Inter', sans-serif;
+    font-size: var(--font-size-regular);
+    /* Font weight */
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    /* Colors */
+    --color-dark: #010101;
+    --color-grey-light: #f5f5f5;
+    --color-grey: #fafafa;
+    --color-grey-dark: #dddddd;
+    --color-grey-darker: #bfbfbf;
+    --text-color: var(--color-dark);
+    --bg-color: var(--color-grey);
+    --border-color: var(--color-grey-dark);
+
+    /* Utilities */
+    --container-width: 50%;
+    --logo-size: 70px;
+    --search-input-width: 80%;
+    --search-btn-width: 20%;
+    --form-element-padding: 16px 16px 16px 24px;
+    --border: 1px solid var(--border-color);
+
+    /* Transitions */
+    --transition-regular: all 0.15s linear;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: var(--transition-regular);
+}
+
+body {
+    font-family: var(--font);
+    background-color: #F3F3F3;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(39, 105, 227);
+}
+
+p1{
+    text-decoration: none;
+    font-style: normal;
+    font-size: 12pt;
+    color: #010101;
+}
+
+
+
+.header1 {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    padding: 16px 48px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: var(--base-00-light-primary, #FFF);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    z-index: 999; /* Added z-index property */
+    margin-bottom: 80px; /* Add margin-bottom for spacing */
+  }
+  
+
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+    align-items: flex-start;
+    border-radius: 16px 16px 16px 16px;
+    border-style: calc(10px);
+    background: var(--base-00-light-primary, #FFF);
+    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.10), 0px 4px 6px -2px rgba(182, 182, 182, 0.05);
+    margin-top: 136px; /* Added margin-top property */
+    margin-bottom: 56px;
+  } 
+
+
+  
+.container2 {
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+    align-items: flex-start;
+    border-radius: 16px 16px 16px 16px;
+    border-style: calc(10px);
+    background: var(--base-00-light-primary, #FFF);
+    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.10), 0px 4px 6px -2px rgba(182, 182, 182, 0.05);
+    margin-top: 80px; /* Added margin-top property */
+    margin-bottom: 80px;
+  }
+  .container2:hover {
+    border: 2px solid rgb(31, 124, 238); /* Apply a 2px solid blue border on hover */
+  }
+
+  .section, .container1, .container2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .section.show, .container1.show, .container2.show {
+    opacity: 1;
+  }
+  
+ 
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .divider {
+    width: 309px; /* Set the desired width */
+    height: 1px;
+    background-color: lightgrey;;
+  }
+  
+  .text-container-main {
+    display: flex;
+    position: relative;
+    padding: 24px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 0 0 16px 16px;
+    background-color: #FFF;
+    align-self: stretch;
+  }
+  
+  .text-container {
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
+    color: #18181B; /* Optional: Customize the text color */
+  }
+
+  .text-container2 {
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
+    color: #A1A1AA; /* Optional: Customize the text color */
+  }
+  
+  .expand-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    size: 16px;
+    width: 16px;
+    height: 16px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .expand-icon.collapsed {
+    transform: rotate(-180deg);
+  }
+
+  .text-container.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .section {
+    display: flex;
+    padding: 24px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    align-self: stretch;
+    border-bottom: 1px solid var(--tertiary-gray-200-light, #E4E4E7);
+    margin-bottom: 80px;
+  }
+
+ 
+  .links a {
+    display: flex;
+    color: inherit; /* Assuming the parent element has a default text color */
+    text-decoration: none;
+    width: 343px;
+    padding: 0px 16px 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .links a:hover {
+    color: black; /* Change the text color to black on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
