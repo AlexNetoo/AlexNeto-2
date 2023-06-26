@@ -49,7 +49,7 @@
 
 body {
     font-family: var(--font);
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -66,20 +66,17 @@ main {
     align-items: center;
 }
 
-
 a {
     text-decoration: none;
     color: rgb(39, 105, 227);
 }
 
-p1{
+p1 {
     text-decoration: none;
     font-style: normal;
     font-size: 12pt;
     color: #010101;
 }
-
-
 
 .header1 {
     position: fixed;
@@ -90,28 +87,26 @@ p1{
     justify-content: center;
     align-items: center;
     align-self: stretch;
-    background: var(--base-00-light-primary, #FFF);
+    background: var(--base-00-light-primary, #fff);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     z-index: 999; /* Added z-index property */
     margin-bottom: 80px; /* Add margin-bottom for spacing */
-  }
-  
+}
 
-  .container1 {
+.container1 {
     display: flex;
     flex-direction: column;
     width: 343px;
     align-items: flex-start;
     border-radius: 16px 16px 16px 16px;
     border-style: calc(10px);
-    background: var(--base-00-light-primary, #FFF);
-    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.10), 0px 4px 6px -2px rgba(182, 182, 182, 0.05);
+    background: var(--base-00-light-primary, #fff);
+    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.1),
+        0px 4px 6px -2px rgba(182, 182, 182, 0.05);
     margin-top: 136px; /* Added margin-top property */
     margin-bottom: 56px;
-  } 
+}
 
-
-  
 .container2 {
     display: flex;
     flex-direction: column;
@@ -119,44 +114,47 @@ p1{
     align-items: flex-start;
     border-radius: 16px 16px 16px 16px;
     border-style: calc(10px);
-    background: var(--base-00-light-primary, #FFF);
-    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.10), 0px 4px 6px -2px rgba(182, 182, 182, 0.05);
+    background: var(--base-00-light-primary, #fff);
+    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.1),
+        0px 4px 6px -2px rgba(182, 182, 182, 0.05);
     margin-top: 80px; /* Added margin-top property */
     margin-bottom: 80px;
-  }
-  .container2:hover {
+}
+.container2:hover {
     border: 2px solid rgb(31, 124, 238); /* Apply a 2px solid blue border on hover */
-  }
+}
 
-  .section, .container1, .container2 {
+.section,
+.container1,
+.container2 {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-  }
-  
-  .section.show, .container1.show, .container2.show {
+}
+
+.section.show,
+.container1.show,
+.container2.show {
     opacity: 1;
-  }
-  
- 
-  
-  .image-container {
+}
+
+.image-container {
     position: relative;
-  }
-  
-  .image-container img {
+}
+
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 16px 16px 0 0;
-  }
-  
-  .divider {
+}
+
+.divider {
     width: 309px; /* Set the desired width */
     height: 1px;
-    background-color: lightgrey;;
-  }
-  
-  .text-container-main {
+    background-color: lightgrey;
+}
+
+.text-container-main {
     display: flex;
     position: relative;
     padding: 24px 24px;
@@ -164,21 +162,21 @@ p1{
     align-items: flex-start;
     gap: 16px;
     border-radius: 0 0 16px 16px;
-    background-color: #FFF;
+    background-color: #fff;
     align-self: stretch;
-  }
-  
-  .text-container {
-    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
-    color: #18181B; /* Optional: Customize the text color */
-  }
+}
 
-  .text-container2 {
+.text-container {
     background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
-    color: #A1A1AA; /* Optional: Customize the text color */
-  }
-  
-  .expand-icon {
+    color: #18181b; /* Optional: Customize the text color */
+}
+
+.text-container2 {
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
+    color: #a1a1aa; /* Optional: Customize the text color */
+}
+
+.expand-icon {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -188,19 +186,19 @@ p1{
     transform: rotate(0deg);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
-  }
+}
 
-  .expand-icon.collapsed {
+.expand-icon.collapsed {
     transform: rotate(-180deg);
-  }
+}
 
-  .text-container.collapsed {
+.text-container.collapsed {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-  }
+}
 
-  .section {
+.section {
     display: flex;
     padding: 24px 0px;
     justify-content: center;
@@ -208,12 +206,11 @@ p1{
     gap: 8px;
     width: 100%;
     align-self: stretch;
-    border-bottom: 1px solid var(--tertiary-gray-200-light, #E4E4E7);
+    border-bottom: 1px solid var(--tertiary-gray-200-light, #e4e4e7);
     margin-bottom: 80px;
-  }
+}
 
- 
-  .links a {
+.links a {
     display: flex;
     color: inherit; /* Assuming the parent element has a default text color */
     text-decoration: none;
@@ -222,9 +219,9 @@ p1{
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
-  }
-  
-  .links a:hover {
+}
+
+.links a:hover {
     color: black; /* Change the text color to black on hover */
     text-decoration: underline; /* Add underline on hover */
-  }
+}
