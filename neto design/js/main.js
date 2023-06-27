@@ -1,17 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const expandIcons = document.querySelectorAll('.expand-icon');
+const arrowToggles = document.querySelectorAll('.arrow-container');
+const elements = document.querySelectorAll('.section, .container1, .container2');
 
-    expandIcons.forEach(function (icon) {
-        icon.addEventListener('click', function () {
-            const textContainer = this.parentElement.querySelector('.text-container');
+function listenToExpandDropdownEvents() {
+    arrowToggles.forEach((arrowContainer) => {
+        arrowContainer.addEventListener('click', () => {
+            const targetId = arrowContainer.getAttribute('data-target');
+            const target = document.querySelector(`#${targetId}`);
+            const expandIcon = arrowContainer.children[0];
 
-            textContainer.classList.toggle('collapsed');
-            this.classList.toggle('collapsed');
+            target.classList.toggle('show');
+            expandIcon.classList.toggle('active');
         });
     });
-});
-
-const elements = document.querySelectorAll('.section, .container1, .container2');
+}
 
 function animateElements() {
     elements.forEach((element, index) => {
@@ -22,3 +23,4 @@ function animateElements() {
 }
 
 animateElements();
+listenToExpandDropdownEvents();

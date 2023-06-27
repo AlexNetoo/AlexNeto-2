@@ -178,26 +178,42 @@ p1 {
     color: #a1a1aa; /* Optional: Customize the text color */
 }
 
-.expand-icon {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    size: 16px;
-    width: 16px;
-    height: 16px;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+.text-container-dropdown {
+    width: 100%;
 }
 
-.expand-icon.collapsed {
-    transform: rotate(-180deg);
-}
-
-.text-container.collapsed {
-    max-height: 0;
+.text-container-dropdown .dropdown-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #52525b;
+    padding: 0px 24px;
+    max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    border-top: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.text-container-dropdown .dropdown-text.show {
+    padding: 24px 24px;
+    max-height: 100vh;
+    border-top: 1px solid var(--color-grey-light);
+}
+
+.text-container-dropdown .arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 24px;
+    cursor: pointer;
+    border-top: 1px solid var(--color-grey-light);
+}
+
+.text-container-dropdown .arrow-container .material-icons {
+    transition: all 0.5s ease-in-out;
+}
+
+.text-container-dropdown .arrow-container .material-icons.active {
+    transform: rotate(180deg);
 }
 
 .section {
