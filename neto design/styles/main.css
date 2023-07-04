@@ -18,14 +18,34 @@
     --font-weight-black: 900;
 
     /* Colors */
+    --color-black: #000000;
     --color-dark: #010101;
+    --color-dark-lighter: #212121;
+    --color-dark-lightest: #282828;
     --color-grey-light: #f5f5f5;
+    --color-grey-lighter: #f3f3f3;
+    --color-grey-md: #a1a1aa;
     --color-grey: #fafafa;
     --color-grey-dark: #dddddd;
     --color-grey-darker: #bfbfbf;
+    --color-white: #ffffff;
     --text-color: var(--color-dark);
-    --bg-color: var(--color-grey);
+    --bg-color: var(--color-grey-lighter);
     --border-color: var(--color-grey-dark);
+    --header-bg: var(--color-white);
+    --header-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    --secondary-text-color: var(--color-grey-md);
+    --container-bg: var(--color-white);
+    --container-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.1),
+        0px 4px 6px -2px rgba(182, 182, 182, 0.05);
+    --text-container-bg: rgba(255, 255, 255, 0.7);
+    --text-container-color: #18181b;
+    --dropdown-text-border: 1px solid transparent;
+    --dropdown-text-color: #52525b;
+    --dropdown-text-border-divider: 1px solid var(--color-grey-light);
+    --section-border: 1px solid #e4e4e7;
+    --divider-bg: lightgrey;
+    --links-hover-color: var(--color-black);
 
     /* Utilities */
     --container-width: 50%;
@@ -34,6 +54,8 @@
     --search-btn-width: 20%;
     --form-element-padding: 16px 16px 16px 24px;
     --border: 1px solid var(--border-color);
+    --theme-toggle-width: 40px;
+    --theme-toggle-height: 20px;
 
     /* Transitions */
     --transition-regular: all 0.15s linear;
@@ -49,7 +71,7 @@
 
 body {
     font-family: var(--font);
-    background-color: #f3f3f3;
+    background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -75,7 +97,7 @@ h4 {
     text-decoration: none;
     font-weight: 400;
     font-size: 14pt;
-    color: #a1a1aa;
+    color: var(--secondary-text-color);
 }
 
 .header1 {
@@ -84,13 +106,18 @@ h4 {
     display: flex;
     width: 100%;
     padding: 16px 48px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    background: var(--base-00-light-primary, #fff);
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-    z-index: 999; /* Added z-index property */
-    margin-bottom: 80px; /* Add margin-bottom for spacing */
+    background: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    z-index: 999;
+    margin-bottom: 80px;
+}
+
+.header1 .header-ghost-div {
+    width: var(--theme-toggle-width);
+    height: var(--theme-toggle-height);
 }
 
 .container1 {
@@ -101,10 +128,9 @@ h4 {
     border-radius: 16px 16px 16px 16px;
     border-style: calc(10px);
     border: 2px solid transparent;
-    background: var(--base-00-light-primary, #fff);
-    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.1),
-        0px 4px 6px -2px rgba(182, 182, 182, 0.05);
-    margin-top: 136px; /* Added margin-top property */
+    background: var(--container-bg);
+    box-shadow: var(--container-shadow);
+    margin-top: 136px;
     margin-bottom: 56px;
 }
 
@@ -116,15 +142,14 @@ h4 {
     border-radius: 16px 16px 16px 16px;
     border-style: calc(10px);
     border: 2px solid transparent;
-    border-color: rgb(243, 243, 243);
-    background: var(--base-00-light-primary, #fff);
-    box-shadow: 0px 10px 15px -3px rgba(182, 182, 182, 0.1),
-        0px 4px 6px -2px rgba(182, 182, 182, 0.05);
-    margin-top: 80px; /* Added margin-top property */
+    background: var(--container-bg);
+    box-shadow: var(--container-shadow);
+    margin-top: 80px;
     margin-bottom: 80px;
 }
+
 .container2:hover {
-    border: 2px solid rgb(31, 124, 238); /* Apply a 2px solid blue border on hover */
+    border: 2px solid rgb(31, 124, 238);
 }
 
 .section,
@@ -188,9 +213,9 @@ h4 {
 }
 
 .divider {
-    width: 309px; /* Set the desired width */
+    width: 309px;
     height: 1px;
-    background-color: lightgrey;
+    background-color: var(--divider-bg);
 }
 
 .text-container-main {
@@ -201,18 +226,18 @@ h4 {
     align-items: flex-start;
     gap: 16px;
     border-radius: 0 0 13px 13px;
-    background-color: #fff;
+    background-color: var(--container-bg);
     align-self: stretch;
 }
 
 .text-container {
-    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
-    color: #18181b; /* Optional: Customize the text color */
+    background-color: var(--text-container-bg);
+    color: var(--text-container-color);
 }
 
 .text-container2 {
-    background-color: rgba(255, 255, 255, 0.7); /* Optional: Customize the background color */
-    color: #a1a1aa; /* Optional: Customize the text color */
+    background-color: var(--text-container-bg);
+    color: var(--secondary-text-color);
 }
 
 .text-container-dropdown {
@@ -222,11 +247,11 @@ h4 {
 .text-container-dropdown .dropdown-text {
     font-size: 16px;
     font-weight: 400;
-    color: #52525b;
+    color: var(--dropdown-text-color);
     padding: 0px 24px;
     max-height: 0px;
     overflow: hidden;
-    border-top: 1px solid transparent;
+    border-top: var(--dropdown-text-border);
     transition: all 0.2s ease-in;
     transition: all 0.6s ease-out;
 }
@@ -234,7 +259,7 @@ h4 {
 .text-container-dropdown .dropdown-text.show {
     padding: 24px 24px;
     max-height: 100vh;
-    border-top: 1px solid var(--color-grey-light);
+    border-top: var(--dropdown-text-border-divider);
 }
 
 .text-container-dropdown .arrow-container {
@@ -243,7 +268,7 @@ h4 {
     align-items: center;
     padding: 15px 24px;
     cursor: pointer;
-    border-top: 1px solid var(--color-grey-light);
+    border-top: var(--dropdown-text-border-divider);
 }
 
 .text-container-dropdown .arrow-container .material-icons {
@@ -262,7 +287,7 @@ h4 {
     gap: 8px;
     width: 100%;
     align-self: stretch;
-    border-bottom: 1px solid var(--tertiary-gray-200-light, #e4e4e7);
+    border-bottom: var(--section-border);
     margin-bottom: 80px;
 }
 
@@ -278,6 +303,55 @@ h4 {
 }
 
 .links a:hover {
-    color: black; /* Change the text color to black on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: var(--links-hover-color);
+    text-decoration: underline;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    position: relative;
+    width: var(--theme-toggle-width);
+    height: var(--theme-toggle-height);
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode {
+    --text-color: var(--color-white);
+    --bg-color: var(--color-dark-lighter);
+    --header-bg: var(--color-dark-lightest);
+    --header-shadow: 0px 1px 1px 0px rgba(18, 18, 18, 0.3);
+    --secondary-text-color: var(--color-grey-md);
+    --container-bg: var(--color-dark-lightest);
+    --container-shadow: 0px 3px 35px 0px rgba(18, 18, 18, 0.8);
+    --text-container-bg: var(--color-dark-lightest);
+    --text-container-color: var(--color-white);
+    --dropdown-text-border: 1px solid rgba(244, 244, 245, 0.1);
+    --dropdown-text-color: var(--color-white);
+    --dropdown-text-border-divider: 1px solid #404040;
+    --divider-bg: rgba(244, 244, 245, 0.1);
+    --links-hover-color: rgb(31, 124, 238);
+    --section-border: 1px solid rgba(255, 255, 255, 0.102);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: var(--links-hover-color);
+}
+
+body.dark-mode .dark-mode-toggle::before {
+    transform: translateX(20px);
 }

@@ -9,14 +9,18 @@
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" type="text/css" href="styles/main.css" />
         <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
         <script defer src="js/main.js"></script>
+        <script defer src="js/darkModeSwitcher.js"></script>
     </head>
 
     <body>
         <div class="header1">
+            <div class="header-ghost-div"></div>
             <p>Alex Neto</p>
+            <div id="darkModeToggle" class="dark-mode-toggle"></div>
         </div>
 
         <div class="content">
@@ -24,7 +28,11 @@
                 <div class="container">
                     <div class="container1">
                         <div class="image-container">
-                            <img src="assets/images/avatar2.png" alt="Image" />
+                            <img
+                                src="assets/images/avatar2.png"
+                                alt="Image"
+                                id="avatarImage"
+                            />
                         </div>
                         <div class="text-container-main">
                             <div class="text-container">
@@ -45,8 +53,16 @@
                     <div class="container">
                         <div class="container2">
                             <div class="image-container">
-                                <a href="https://hnsswitch.io" target="_blank" class="image-link">
-                                    <img src="assets/images/Switch.png" alt="Image" class="image" />
+                                <a
+                                    href="https://hnsswitch.io"
+                                    target="_blank"
+                                    class="image-link"
+                                >
+                                    <img
+                                        src="assets/images/Switch.png"
+                                        alt="Image"
+                                        class="image"
+                                    />
                                     <p class="image-text">See more</p>
                                 </a>
                             </div>
@@ -60,18 +76,24 @@
                             </div>
                             <div class="text-container-dropdown">
                                 <div class="dropdown-text" id="dropdownTextHnsSwitch">
-                                    <h4> Project</h4>
+                                    <h4>Project</h4>
                                     <br />
                                     <p>
-                                       HNSswitch is a currency conversion app that simplifies Handshake (HNS) conversions, enabling users to effortlessly calculate the value of HNS in various currencies and stay updated on real-time exchange rates.
-
+                                        HNSswitch is a currency conversion app that simplifies
+                                        Handshake (HNS) conversions, enabling users to
+                                        effortlessly calculate the value of HNS in various
+                                        currencies and stay updated on real-time exchange
+                                        rates.
                                     </p>
                                     <br />
                                     <br />
-                                    <h4> Responsibilities</h4>
+                                    <h4>Responsibilities</h4>
                                     <br />
                                     <p>
-                                    As the lead product designer, I led the end-to-end creation of this app, taking it from concept to final design. Collaborating closely with developers, I ensured seamless implementation of the design vision.
+                                        As the lead product designer, I led the end-to-end
+                                        creation of this app, taking it from concept to final
+                                        design. Collaborating closely with developers, I
+                                        ensured seamless implementation of the design vision.
                                     </p>
                                 </div>
                                 <div
@@ -86,7 +108,11 @@
                         <div class="container2">
                             <div class="image-container">
                                 <a href="https://hns.id" target="_blank" class="image-link">
-                                    <img src="assets/images/DSLD.png" alt="Image" class="image" />
+                                    <img
+                                        src="assets/images/DSLD.png"
+                                        alt="Image"
+                                        class="image"
+                                    />
                                     <p class="image-text">See more</p>
                                 </a>
                             </div>
@@ -100,16 +126,20 @@
                             </div>
                             <div class="text-container-dropdown">
                                 <div class="dropdown-text" id="dropdownTextHnsId">
-                                    <p>
-                                        <h4> Project</h4>
-                                        <br />
-                                       HNS ID is a decentralized second-level domain rgisitrar built on the Optimism Layer 2 blockchain.
-                                        <br />
-                                        <br />
-                                        <h4> Responsibilities</h4>
-                                        <br />
-                                        As the lead product designer for this project, I was responsible for collaborating with cross-functional teams to define the design strategy and vision. I conducted user research, created all the user flows and prototypes, and ensured accurate implementation of designs by working closely with developers.
-                                    </p>
+                                    <h4>Project</h4>
+                                    <br />
+                                    HNS ID is a decentralized second-level domain rgisitrar
+                                    built on the Optimism Layer 2 blockchain.
+                                    <br />
+                                    <br />
+                                    <h4>Responsibilities</h4>
+                                    <br />
+                                    As the lead product designer for this project, I was
+                                    responsible for collaborating with cross-functional teams
+                                    to define the design strategy and vision. I conducted user
+                                    research, created all the user flows and prototypes, and
+                                    ensured accurate implementation of designs by working
+                                    closely with developers.
                                 </div>
                                 <div class="arrow-container" data-target="dropdownTextHnsId">
                                     <span class="material-icons">expand_more</span>
@@ -119,8 +149,17 @@
 
                         <div class="container2">
                             <div class="image-container">
-                                <a href="https://namebase.io" target="_blank" class="image-link">
-                                    <img src="assets/images/NB2.png" alt="Image" class="image" />
+                                <a
+                                    href="https://namebase.io"
+                                    target="_blank"
+                                    class="image-link"
+                                >
+                                    <img
+                                        src="assets/images/NB2.png"
+                                        alt="Image"
+                                        class="image"
+                                        id="namebaseImage"
+                                    />
                                     <p class="image-text">See more</p>
                                 </a>
                             </div>
@@ -136,22 +175,32 @@
                             </div>
                             <div class="text-container-dropdown">
                                 <div class="dropdown-text" id="dropdownTextNamebase">
-                                    <p>
-                                        <h4> Project</h4>
-                                        <br />
-                                        Namebase.io is a decentralized domain name registrar that utilizes blockchain technology to provide secure and censorship-resistant management of domain names on the Handshake network.
-                                        <br />
-                                        <br />
-                                        <h4> Responsibilities</h4>
-                                        <br />
-                                        As the main product designer for Namebase.io, I led collaborative efforts with cross-functional teams to establish the platform's design and vision.
-                                        <br />
-                                        <br />
-                                        By maintaining ongoing communication with our community and customers, I created wireframes and prototypes to elevate the interface and optimize the user experience. 
-                                        <br />
-                                        <br />
-                                        Through close collaboration with developers, I ensured precise implementation of designs, which led to heightened user engagement and garnered positive feedback. By conducting thorough usability testing and implementing continuous improvement measures, I successfully enhanced the overall design and user experience of Namebase.
-                                    </p>
+                                    <h4>Project</h4>
+                                    <br />
+                                    Namebase.io is a decentralized domain name registrar that
+                                    utilizes blockchain technology to provide secure and
+                                    censorship-resistant management of domain names on the
+                                    Handshake network.
+                                    <br />
+                                    <br />
+                                    <h4>Responsibilities</h4>
+                                    <br />
+                                    As the main product designer for Namebase.io, I led
+                                    collaborative efforts with cross-functional teams to
+                                    establish the platform's design and vision.
+                                    <br />
+                                    <br />
+                                    By maintaining ongoing communication with our community and
+                                    customers, I created wireframes and prototypes to elevate
+                                    the interface and optimize the user experience.
+                                    <br />
+                                    <br />
+                                    Through close collaboration with developers, I ensured
+                                    precise implementation of designs, which led to heightened
+                                    user engagement and garnered positive feedback. By
+                                    conducting thorough usability testing and implementing
+                                    continuous improvement measures, I successfully enhanced
+                                    the overall design and user experience of Namebase.
                                 </div>
                                 <div
                                     class="arrow-container"
