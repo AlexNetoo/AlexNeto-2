@@ -12,6 +12,10 @@
         <link rel="stylesheet" type="text/css" href="styles/main.css" />
         <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
+        <script
+            defer
+            src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+        ></script>
         <script defer src="js/main.js"></script>
         <script defer src="js/darkModeSwitcher.js"></script>
     </head>
@@ -26,22 +30,76 @@
         <div class="content">
             <main>
                 <div class="container">
-                    <div class="container1">
-                        <div class="image-container">
-                            <img
-                                src="assets/images/avatar2.png"
-                                alt="Image"
-                                id="avatarImage"
-                            />
-                        </div>
-                        <div class="text-container-main">
-                            <div class="text-container">
-                                <p>Senior Product Designer</p>
+                    <div class="chatbox">
+                        <img src="assets/images/round Avatar light.svg" id="avatarImage" />
+
+                        <div class="chat">
+                            <div id="step1" class="chat-step">
+                                <lottie-player
+                                    id="animation1"
+                                    src="assets/lottie/Typing.json"
+                                    background="transparent"
+                                    speed="1"
+                                    aria-hidden="true"
+                                    autoplay
+                                ></lottie-player>
+                                <img
+                                    id="staticImage1"
+                                    src="assets/images/1.svg"
+                                    alt="Static Image"
+                                    style="display: none"
+                                />
                             </div>
-                            <div class="text-container2">
-                                <p>
-                                    I create user-driven products with a strong business focus.
-                                </p>
+
+                            <div id="step2" style="display: none" class="chat-step">
+                                <lottie-player
+                                    id="animation2"
+                                    src="assets/lottie/Typing.json"
+                                    background="transparent"
+                                    speed="1"
+                                    aria-hidden="true"
+                                    autoplay
+                                ></lottie-player>
+                                <img
+                                    id="staticImage2"
+                                    src="assets/images/2.svg"
+                                    alt="Static Image"
+                                    style="display: none"
+                                />
+                            </div>
+
+                            <div id="step3" style="display: none" class="chat-step">
+                                <lottie-player
+                                    id="animation3"
+                                    src="assets/lottie/Typing.json"
+                                    background="transparent"
+                                    speed="1"
+                                    aria-hidden="true"
+                                    autoplay
+                                ></lottie-player>
+                                <img
+                                    id="staticImage3"
+                                    src="assets/images/3.svg"
+                                    alt="Static Image"
+                                    style="display: none"
+                                />
+                            </div>
+
+                            <div id="step4" style="display: none" class="chat-step">
+                                <lottie-player
+                                    id="animation4"
+                                    src="assets/lottie/Typing.json"
+                                    background="transparent"
+                                    speed="1"
+                                    aria-hidden="true"
+                                    autoplay
+                                ></lottie-player>
+                                <img
+                                    id="staticImage4"
+                                    src="assets/images/4.svg"
+                                    alt="Static Image"
+                                    style="display: none"
+                                />
                             </div>
                         </div>
                     </div>
@@ -155,7 +213,7 @@
                                     class="image-link"
                                 >
                                     <img
-                                        src="assets/images/NB2.png"
+                                        src="assets/images/NBlogo.jpg"
                                         alt="Image"
                                         class="image"
                                         id="namebaseImage"

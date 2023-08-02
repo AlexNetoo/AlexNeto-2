@@ -1,5 +1,5 @@
 const arrowToggles = document.querySelectorAll('.arrow-container');
-const elements = document.querySelectorAll('.section, .container1, .container2');
+const chatElements = document.querySelectorAll('.chat .chat-step');
 
 function listenToExpandDropdownEvents() {
     arrowToggles.forEach((arrowContainer) => {
@@ -14,13 +14,45 @@ function listenToExpandDropdownEvents() {
     });
 }
 
-function animateElements() {
-    elements.forEach((element, index) => {
+function showAnimation(step) {
+    const chatElementsCount = chatElements.length;
+
+    if (step <= chatElementsCount) {
+        // Lottie animation (chat)
+        const currentStepElement = document.getElementById(`step${step}`);
+        const animationElement = document.getElementById(`animation${step}`);
+        const staticImageElement = document.getElementById(`staticImage${step}`);
+
+        currentStepElement.style.display = 'block';
+
+        // Show the Lottie animation
+        animationElement.style.display = 'block';
+
+        // Play the Lottie animation
+        animationElement.play();
+
+        // Wait for the Lottie animation to complete
+        animationElement.addEventListener('complete', () => {
+            // Hide the Lottie animation and show the static image
+            animationElement.style.display = 'none';
+            staticImageElement.style.display = 'block';
+
+            // Animate the next chat message
+            showAnimation(step + 1);
+        });
+    } else {
+        // Show projects
+        const projectElements = document.querySelectorAll(
+            '.section, .container1, .container2'
+        );
+
         setTimeout(() => {
-            element.classList.add('show');
-        }, 200 * index); // Adjust the delay as per your preference
-    });
+            projectElements.forEach((elementToAnimate) => {
+                elementToAnimate.classList.add('show');
+            });
+        }, 200);
+    }
 }
 
-animateElements();
 listenToExpandDropdownEvents();
+showAnimation(1);

@@ -76,7 +76,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
 }
 
 main {
@@ -120,6 +119,15 @@ h4 {
     height: var(--theme-toggle-height);
 }
 
+.container0 {
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+    align-items: center;
+    gap: 40px;
+    margin-top: 136px;
+    margin-bottom: 56px;
+}
 .container1 {
     display: flex;
     flex-direction: column;
@@ -277,6 +285,24 @@ h4 {
 
 .text-container-dropdown .arrow-container .material-icons.active {
     transform: rotate(180deg);
+}
+
+.chatbox {
+    margin-top: 160px;
+    display: flex;
+    height: 519px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.chat {
+    display: flex;
+    width: 343px;
+    flex-direction: column;
+    align-items: left;
+    gap: 8px;
+    margin-bottom: 40px;
 }
 
 .section {
