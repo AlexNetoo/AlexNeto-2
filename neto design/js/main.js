@@ -20,8 +20,8 @@ function showAnimation(step) {
     if (step <= chatElementsCount) {
         // Lottie animation (chat)
         const currentStepElement = document.getElementById(`step${step}`);
-        const animationElement = document.getElementById(`animation${step}`);
-        const staticImageElement = document.getElementById(`staticImage${step}`);
+        const animationElement = document.getElementById(`chatTypingAnimation${step}`);
+        const staticImageElement = document.getElementById(`chatStepText${step}`);
 
         currentStepElement.style.display = 'block';
 
