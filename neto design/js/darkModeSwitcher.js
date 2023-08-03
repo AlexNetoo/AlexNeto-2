@@ -34,6 +34,7 @@ const chatStep4DarkSrc = 'assets/images/4 dark.svg';
 let isDarkModeEnabled = false;
 
 darkModeToggle.addEventListener('click', toggleDarkMode);
+validateTheme();
 
 /**
  * Handles logic to switch between light and dark modes.
@@ -41,11 +42,62 @@ darkModeToggle.addEventListener('click', toggleDarkMode);
  * Dark mode class is toggled from document's body and `toggleImages` and `toggleChatAnimations` is called.
  */
 function toggleDarkMode() {
-    document.body.classList.toggle(darkModeClass);
+    isDarkModeEnabled ? setLightTheme() : setDarkTheme();
     isDarkModeEnabled = document.body.classList.contains(darkModeClass);
 
     toggleImages();
     toggleChatAnimations();
+}
+
+/**
+ * Checks if theme was previously stored in local storage, and sets it accordingly.
+ */
+function validateTheme() {
+    const storedTheme = getThemeFromLocalStorage();
+
+    storedTheme && storedTheme === 'dark' ? setDarkTheme() : setLightTheme();
+    isDarkModeEnabled = storedTheme === 'dark';
+
+    toggleImages();
+    toggleChatAnimations();
+}
+
+/**
+ * Removes dark mode class from `body` and stores light theme in `localStorage`.
+ */
+function setLightTheme() {
+    document.body.classList.remove(darkModeClass);
+
+    setThemeInLocalStorage('light');
+}
+
+/**
+ * Adds dark mode class from `body` and stores dark theme in `localStorage`.
+ */
+function setDarkTheme() {
+    document.body.classList.add(darkModeClass);
+
+    setThemeInLocalStorage('dark');
+}
+
+/**
+ * Stores `theme` in local storage.
+ *
+ * @param {string} theme
+ */
+function setThemeInLocalStorage(theme) {
+    localStorage.setItem('theme', theme);
+}
+
+/**
+ * Gets theme saved in local storage.
+ *
+ * @returns theme saved in local storage. If theme is not stored, `light` will be returned.
+ */
+function getThemeFromLocalStorage() {
+    const storedTheme = localStorage.getItem('theme') ?? 'light';
+
+    return storedTheme;
 }
 
 /**
